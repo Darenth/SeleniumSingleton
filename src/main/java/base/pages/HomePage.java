@@ -22,7 +22,15 @@ public class HomePage {
     public  HoversPage clickHovers(){
         clickLink("Hovers");
         return new HoversPage(driver);
+    }
 
+    public HorizontalSliderPage clickHorizontalSlider(){
+        clickLink("Horizontal Slider");
+        return new HorizontalSliderPage(driver);
+    }
+    public AlertsPage clickJavaScriptAlerts(){
+        clickLink("JavaScript Alerts");
+        return new AlertsPage(driver);
     }
 
     public void clickLink(String linkText){
