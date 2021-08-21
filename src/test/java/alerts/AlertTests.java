@@ -3,15 +3,16 @@ package alerts;
 import base.BaseTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import retry.Retry;
 
 public class AlertTests extends BaseTests {
 
-    @Test
+    @Test (groups = "Alerts", retryAnalyzer = Retry.class)
     public void testAcceptAlert() {
         var alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerAlert();
         alertsPage.clickToAccept();
-        Assert.assertEquals(alertsPage.getTextFromMessage(), "You successfully clicked an alert");
+        Assert.assertEquals(alertsPage.getTextFromMessage(), "You successfaully clicked an alert");
 
     }
 
