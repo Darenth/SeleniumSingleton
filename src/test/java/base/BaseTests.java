@@ -20,8 +20,9 @@ public class BaseTests {
     WebDriverWait wait;
     protected HomePage homePage;
 
-    @BeforeClass
+    @BeforeClass (alwaysRun = true)
     public void setUp() {
+       // System.out.println("BeforeSuite");
         driver = getChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -30,14 +31,20 @@ public class BaseTests {
         homePage = new HomePage(driver);
 
     }
-    @BeforeMethod
+    @BeforeMethod (alwaysRun = true)
     public void goHome(){
+        System.out.println(driver==null);
+        if(driver==null){
+            driver = getChromeDriver();}
         driver.get("https://the-internet.herokuapp.com/");
+        //System.out.println("BeforeMethod");
     }
 
 
-    @AfterClass
+
+    @AfterSuite (alwaysRun = true)
     public void tearDown() {
+        //System.out.println("AfterSuite");
         driver.quit();
     }
 

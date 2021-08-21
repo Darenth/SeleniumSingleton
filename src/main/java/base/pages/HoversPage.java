@@ -21,6 +21,7 @@ public class HoversPage {
         WebElement figure = driver.findElements(figureBox).get(index - 1);
         Actions actions = new Actions(driver);
         actions.moveToElement(figure).perform();
+        //actions.contextClick(elementLocator).perform(); right click on element
         return new FigureCaption(figure.findElement(boxCaption));
     }
 
