@@ -2,7 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test name="Alerts tests">
-
+<!--        from cmd for generate report-->
+        <!--    mvn clean install site io.qameta.allure:allure-maven:report-->
         <groups>
 
             <run>
