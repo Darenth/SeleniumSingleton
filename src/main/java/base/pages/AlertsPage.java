@@ -1,5 +1,6 @@
 package base.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -14,6 +15,7 @@ public class AlertsPage {
         this.driver = driver;
     }
 
+    @Step("[Step] trigger alert")
     public void triggerAlert() {
         driver.findElement(triggerAlertButton).click();
     }

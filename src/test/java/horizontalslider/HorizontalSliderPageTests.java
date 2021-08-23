@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class HorizontalSliderPageTests extends BaseTests {
 
-    @Test
+    @Test(groups = {"HorizontalSliderPageTests","regressionTests"})
     public void testHorizontalSlider(){
         String range="3";
         var slider =homePage.clickHorizontalSlider();

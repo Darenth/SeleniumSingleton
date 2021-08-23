@@ -1,49 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="Alerts tests">
-<!--        from cmd for generate report-->
+    <test name="Alerts tests" thread-count="4" parallel="methods">
+        <!--        from cmd for generate report-->
         <!--    mvn clean install site io.qameta.allure:allure-maven:report-->
         <groups>
 
             <run>
-                <include name="Alerts" />
+                <include name="regressionTests"/>
             </run>
         </groups>
         <classes>
-            <class name="alerts.AlertTests">
-                <!--                <methods>-->
-                <!--                    <include name="testAcceptAlert"/>-->
-                <!--                    <include name="testGetTextFromAlert"/>-->
-                <!--                    <include name="testSetInputInAlert"/>-->
-                <!--                </methods>-->
+            <class name="hover.HoverTests"></class>
+            <class name="alerts.FileUploadtests"></class>
+            <class name="alerts.AlertTests"></class>
+            <class name="dropdown.DropdownTests"></class>
+            <class name="horizontalslider.HorizontalSliderPageTests"></class>
+            <class name="login.LoginTest"></class>
+            <!--                <methods>-->
+            <!--                    <include name="testAcceptAlert"/>-->
+            <!--                    <include name="testGetTextFromAlert"/>-->
+            <!--                    <include name="testSetInputInAlert"/>-->
+            <!--                </methods>-->
 
-            </class>
-            <!--            <class name="alerts.FileUploadtests">-->
-            <!--                <methods>-->
-            <!--                    <include name="testFileUpload"/>-->
-            <!--                </methods>-->
-            <!--            </class>-->
-            <!--            <class name="dropdown.DropdownTests">-->
-            <!--                <methods>-->
-            <!--                    <include name="testSelectOption"/>-->
-            <!--                </methods>-->
-            <!--            </class>-->
-            <!--            <class name="horizontalslider.HorizontalSliderPageTests">-->
-            <!--                <methods>-->
-            <!--                    <include name="testHorizontalSlider"/>-->
-            <!--                </methods>-->
-            <!--            </class>-->
-            <!--            <class name="hover.HoverTests">-->
-            <!--                <methods>-->
-            <!--                    <include name="testHoverUser1"/>-->
-            <!--                </methods>-->
-            <!--            </class>-->
-            <!--            <class name="login.LoginTest">-->
-            <!--                <methods>-->
-            <!--                    <include name="testSucessfulLogin"/>-->
-            <!--                </methods>-->
-            <!--            </class>-->
+
+
         </classes>
     </test>
 </suite>
