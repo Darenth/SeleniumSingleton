@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class DropdownTests extends BaseTests {
 
-    @Test
+    @Test(groups = {"DropdownTests","regressionTests"})
     public void testSelectOption() {
         var dropdown = homePage.clickDropdown();
         String option="Option 1";

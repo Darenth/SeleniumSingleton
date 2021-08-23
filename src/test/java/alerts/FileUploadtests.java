@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class FileUploadtests extends BaseTests {
 
-    @Test
+    @Test(groups = {"FileUploadtests","regressionTests"})
     public void testFileUpload(){
         var uploadPage= homePage.clickFileUpload();
         uploadPage.uploadFile("D:\\Photo\\AsF9vYTw__Q.jpg");

@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import  static  org.testng.Assert.*;
 public class HoverTests extends BaseTests {
 
-    @Test
+    @Test(groups = {"HoverTests","regressionTests"})
     public  void  testHoverUser1(){
         var hoversPage = homePage.clickHovers();
         var caption = hoversPage.hoverOverFigure(1);

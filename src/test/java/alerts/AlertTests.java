@@ -1,13 +1,15 @@
 package alerts;
 
 import base.BaseTests;
+import io.qameta.allure.Step;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import retry.Retry;
 
 public class AlertTests extends BaseTests {
 
-    @Test (groups = "Alerts", retryAnalyzer = Retry.class)
+
+    @Test (groups = {"Alerts","regressionTests"}, retryAnalyzer = Retry.class)
     public void testAcceptAlert() {
         var alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerAlert();
@@ -16,7 +18,7 @@ public class AlertTests extends BaseTests {
 
     }
 
-    @Test(groups = "Alerts")
+    @Test(groups = {"Alerts","regressionTests"})
     public void testGetTextFromAlert() {
         var alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerConfirm();
@@ -25,7 +27,7 @@ public class AlertTests extends BaseTests {
         Assert.assertEquals(text,"I am a JS Confirm");
     }
 
-    @Test
+    @Test(groups = {"Alerts","regressionTests"})
     public void testSetInputInAlert() {
         var alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerPrompt();

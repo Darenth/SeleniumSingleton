@@ -10,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTests {
 
-    @Test
+    @Test(groups = {"LoginTest","regressionTests"})
     public void testSucessfulLogin() {
         LoginPage loginPage = homePage.clickFormAuthentication();
         loginPage.setUsername("tomsmith");
